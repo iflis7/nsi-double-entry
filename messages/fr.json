@@ -1,0 +1,109 @@
+{
+  "ui": {
+    "gameTitle": "Entraînement à la partie double",
+    "check": "Vérifier",
+    "next": "Scénario suivant",
+    "hint": "Indice",
+    "debit": "Débit",
+    "credit": "Crédit",
+    "step": "Scénario {current} / {total}",
+    "language": "Langue",
+    "en": "Anglais",
+    "fr": "Français",
+    "placeAll": "Placez chaque montant avant de vérifier.",
+    "wrong": "Pas tout à fait — les débits doivent égaler les crédits, et chaque ligne doit correspondre à l’opération.",
+    "successGotIt": "Compris",
+    "completionTitle": "Bravo",
+    "completionBody": "Chaque opération est enregistrée deux fois : un débit et un crédit (ou plusieurs lignes qui s’équilibrent). Les écritures restent en équilibre.",
+    "playAgain": "Rejouer",
+    "bankTitle": "Montants à placer",
+    "dragHelp": "Glissez chaque montant dans la case débit ou crédit appropriée.",
+    "totals": "Totaux",
+    "difference": "Écart",
+    "balanced": "Équilibré",
+    "unbalanced": "Pas encore équilibré",
+    "totalsIncomplete": "Placez tous les montants pour voir le statut",
+    "balancedButWrongAccounts": "Débits = crédits, mais comptes ou côtés incorrects",
+    "postingCorrect": "Écriture correcte — débits et crédits correspondent à l’opération",
+    "close": "Fermer"
+  },
+  "intro": {
+    "title": "La partie double en bref",
+    "lead": "Chaque opération est enregistrée au moins deux fois : le total des débits doit égaler le total des crédits.",
+    "equation": "Actif = Passif + Capitaux propres",
+    "rulesIntro": "Soldes « normaux » — comment augmenter chaque type de compte :",
+    "ariaIncrease": "Augmenter",
+    "ariaDecrease": "Diminuer",
+    "ruleAssetsPrefix": "Actif — ",
+    "ruleAssetsInc": "Débit",
+    "ruleAssetsDec": "Crédit",
+    "ruleLiabilitiesPrefix": "Passif — ",
+    "ruleLiabilitiesInc": "Crédit",
+    "ruleLiabilitiesDec": "Débit",
+    "ruleEquityPrefix": "Capitaux propres — ",
+    "ruleEquityInc": "Crédit",
+    "ruleEquityDec": "Débit",
+    "ruleRevPrefix": "Produits — ",
+    "ruleRevAfterInc": "Crédit",
+    "ruleExpMid": ". Charges — ",
+    "ruleExpAfterInc": "Débit",
+    "start": "Commencer"
+  },
+  "equation": "Actif = Passif + Capitaux propres",
+  "accounts": {
+    "cash": "Caisse / banque",
+    "ar": "Clients (créances)",
+    "equity": "Capitaux propres",
+    "loan": "Emprunt bancaire",
+    "revenue": "Prestations / ventes",
+    "expense": "Loyer"
+  },
+  "chips": {
+    "investment": "Apport du dirigeant",
+    "invoice": "Facture client",
+    "rent": "Loyer de bureaux",
+    "loan": "Emprunt"
+  },
+  "scenarios": {
+    "capital-investment": {
+      "title": "Apport en numéraire",
+      "description": "Le dirigeant verse 5 000 $ en espèces dans l’entreprise. Enregistrez l’écriture : augmenter la caisse et les capitaux propres.",
+      "successTitle": "Oui — c’est juste",
+      "successWhy": "La caisse est un actif. Les actifs augmentent au débit : l’entrée d’espèces s’enregistre donc au débit de Caisse.\n\nLes capitaux propres augmentent aussi lors d’un apport : ils augmentent au crédit, donc vous créditez Capitaux propres pour le même montant.\n\nDébits et crédits sont égaux, et chaque ligne correspond à l’opération.",
+      "hintTitle": "Caisse et capitaux propres",
+      "hintBody": "La caisse est un actif : les actifs augmentent au débit (à gauche). La part du dirigeant dans l’entreprise est un capitaux propres : elle augmente au crédit (à droite). Même montant des deux côtés pour équilibrer l’écriture."
+    },
+    "service-on-account": {
+      "title": "Facturer un client",
+      "description": "Vous facturez 2 400 $ de prestations. Vous n’avez pas encore été payé. Enregistrez le chiffre d’affaires et ce que le client doit.",
+      "successTitle": "Exactement",
+      "successWhy": "Vous avez du chiffre d’affaires : vous créditez Prestations / ventes.\n\nLe client n’a pas encore payé : vous avez une créance — un actif représentant ce qu’on vous doit. Les actifs augmentent au débit : vous débitez Clients pour le même montant.\n\nC’est le bon schéma pour une vente à crédit.",
+      "hintTitle": "Créance et produit",
+      "hintBody": "Vous avez du chiffre d’affaires : créditez Prestations / ventes. Le client n’a pas encore payé : vous avez une créance — un actif. Débitez Clients pour le même montant. Cela reflète l’encaissement futur."
+    },
+    "pay-rent": {
+      "title": "Payer le loyer en espèces",
+      "description": "Vous payez 800 $ de loyer de bureaux en espèces. Enregistrez la charge et la sortie de trésorerie.",
+      "successTitle": "Bravo",
+      "successWhy": "Le loyer est une charge : les charges augmentent au débit, donc vous débitez Loyer.\n\nPayer en espèces diminue la caisse — un actif. Les actifs diminuent au crédit : vous créditez Caisse pour le même montant.\n\nUn débit et un crédit gardent l’écriture équilibrée.",
+      "hintTitle": "Charge et caisse",
+      "hintBody": "Le loyer est une charge ; les charges augmentent au débit. La caisse est un actif ; une sortie d’espèces diminue l’actif, donc au crédit. Un débit et un crédit pour le même montant."
+    },
+    "loan-deposit": {
+      "title": "Emprunter à la banque",
+      "description": "La banque verse 10 000 $ sur votre compte. Vous devez rembourser. Enregistrez la trésorerie et la dette.",
+      "successTitle": "Correct",
+      "successWhy": "Votre trésorerie augmente : c’est un actif, donc débit Caisse.\n\nVous devez aussi rembourser la banque : c’est une dette, donc un passif. Les passifs augmentent au crédit : vous créditez Emprunt bancaire pour le même montant.\n\nL’écriture reflète à la fois l’argent reçu et l’obligation.",
+      "hintTitle": "Trésorerie et emprunt",
+      "hintBody": "Votre trésorerie augmente : débit Caisse. Vous devez de l’argent à la banque : c’est un passif ; le passif augmente au crédit (Emprunt). Les deux montants doivent correspondre."
+    },
+    "fix-the-error": {
+      "title": "Trouver l’erreur",
+      "description": "Vous avez facturé un client 1 800 $ à crédit, mais une ligne est mal passée. Déplacez les montants pour que débits = crédits et que l’écriture soit juste.",
+      "successTitle": "C’est corrigé",
+      "successWhy": "En vente à crédit, on débite les créances clients (ce que le client doit encore) et on crédite le chiffre d’affaires (ce que vous avez gagné).\n\nChaque ligne est maintenant au bon endroit, et les débits égaleront toujours les crédits.",
+      "hintTitle": "Vente à crédit",
+      "hintBody": "À la vente à crédit, on débite les créances clients (ce que le client doit) et on crédite le chiffre d’affaires. Si une ligne est du mauvais côté ou sur le mauvais compte, déplacez-la jusqu’à ce que l’histoire et les débits/crédits soient cohérents."
+    }
+  }
+}

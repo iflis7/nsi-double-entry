@@ -1,0 +1,109 @@
+{
+  "ui": {
+    "gameTitle": "Double-entry trainer",
+    "check": "Check",
+    "next": "Next scenario",
+    "hint": "Hint",
+    "debit": "Debit",
+    "credit": "Credit",
+    "step": "Scenario {current} / {total}",
+    "language": "Language",
+    "en": "English",
+    "fr": "French",
+    "placeAll": "Place every amount before checking.",
+    "wrong": "Not quite — debits must equal credits, and each line must match the story.",
+    "successGotIt": "Got it",
+    "completionTitle": "Well done",
+    "completionBody": "Every business event is recorded twice: one debit and one credit (or more lines that still balance). The books stay in balance.",
+    "playAgain": "Play again",
+    "bankTitle": "Amounts to place",
+    "dragHelp": "Drag each amount into the correct debit or credit cell.",
+    "totals": "Totals",
+    "difference": "Difference",
+    "balanced": "Balanced",
+    "unbalanced": "Not balanced yet",
+    "totalsIncomplete": "Place all amounts to see status",
+    "balancedButWrongAccounts": "Debits = credits, but accounts or sides are wrong",
+    "postingCorrect": "Correct entry — debits and credits match the story",
+    "close": "Close"
+  },
+  "intro": {
+    "title": "Double entry in brief",
+    "lead": "Every transaction is recorded at least twice: total debits must equal total credits.",
+    "equation": "Assets = Liabilities + Equity",
+    "rulesIntro": "Normal balances — how you increase each type of account:",
+    "ariaIncrease": "Increase",
+    "ariaDecrease": "Decrease",
+    "ruleAssetsPrefix": "Assets — ",
+    "ruleAssetsInc": "Debit",
+    "ruleAssetsDec": "Credit",
+    "ruleLiabilitiesPrefix": "Liabilities — ",
+    "ruleLiabilitiesInc": "Credit",
+    "ruleLiabilitiesDec": "Debit",
+    "ruleEquityPrefix": "Equity — ",
+    "ruleEquityInc": "Credit",
+    "ruleEquityDec": "Debit",
+    "ruleRevPrefix": "Revenue — ",
+    "ruleRevAfterInc": "Credit",
+    "ruleExpMid": ". Expenses — ",
+    "ruleExpAfterInc": "Debit",
+    "start": "Start"
+  },
+  "equation": "Assets = Liabilities + Equity",
+  "accounts": {
+    "cash": "Cash",
+    "ar": "Accounts receivable",
+    "equity": "Owner equity",
+    "loan": "Loan payable",
+    "revenue": "Service revenue",
+    "expense": "Rent expense"
+  },
+  "chips": {
+    "investment": "Owner investment",
+    "invoice": "Client invoice",
+    "rent": "Office rent",
+    "loan": "Bank loan"
+  },
+  "scenarios": {
+    "capital-investment": {
+      "title": "Owner invests cash",
+      "description": "The owner puts $5,000 cash into the business. Record the entry: increase cash and increase equity.",
+      "successTitle": "Yes — that’s correct",
+      "successWhy": "Cash is an asset. Assets increase on the debit side, so more cash is recorded as a debit to Cash.\n\nOwner equity also increases when the owner invests. Equity increases on the credit side, so you credit Owner equity for the same amount.\n\nDebits and credits are equal, and each line matches the story.",
+      "hintTitle": "Cash and equity",
+      "hintBody": "Cash is an asset. Assets increase on the left (debit). The owner’s stake in the business is equity; equity increases on the right (credit). Use the same amount on both sides so the entry balances."
+    },
+    "service-on-account": {
+      "title": "Invoice a client",
+      "description": "You bill $2,400 for consulting. You have not been paid yet. Record revenue and what the client owes.",
+      "successTitle": "Exactly",
+      "successWhy": "You earned revenue, so Service revenue is credited.\n\nThe client has not paid yet, so you have a receivable — an asset showing what you will collect. Assets increase on the debit side, so Accounts receivable is debited for the same amount.\n\nThat’s the right pattern for a sale on account.",
+      "hintTitle": "Receivable and revenue",
+      "hintBody": "You earned revenue, so credit Service revenue. The client has not paid yet, so you have a receivable — an asset. Debit Accounts receivable for the same amount. That mirrors cash you will collect later."
+    },
+    "pay-rent": {
+      "title": "Pay rent in cash",
+      "description": "You pay $800 office rent in cash. Record the expense and the cash paid out.",
+      "successTitle": "Well done",
+      "successWhy": "Rent is an expense. Expenses increase with a debit, so you debit Rent expense.\n\nPaying cash reduces your cash — an asset. Assets decrease on the credit side, so you credit Cash for the same amount.\n\nOne debit and one credit keep the entry balanced.",
+      "hintTitle": "Expense and cash",
+      "hintBody": "Rent is an expense; expenses increase with a debit. Cash is an asset; paying cash out decreases the asset, which is a credit. One debit and one credit for the same amount."
+    },
+    "loan-deposit": {
+      "title": "Borrow from the bank",
+      "description": "The bank deposits $10,000 into your cash account. You owe the bank. Record cash and the loan.",
+      "successTitle": "Correct",
+      "successWhy": "Your cash balance goes up — an asset — so you debit Cash.\n\nYou also owe the bank. That obligation is a liability. Liabilities increase on the credit side, so you credit Loan payable for the same amount.\n\nThe entry reflects both the cash received and the debt.",
+      "hintTitle": "Cash and loan payable",
+      "hintBody": "Your cash balance goes up — debit Cash. You also owe the bank — that obligation is a liability; liabilities increase with a credit to Loan payable. Both sides must match."
+    },
+    "fix-the-error": {
+      "title": "Find the mistake",
+      "description": "You billed a client $1,800 on account, but one line is posted incorrectly. Move the chips so debits equal credits and the story matches.",
+      "successTitle": "Fixed",
+      "successWhy": "On a credit sale, you debit Accounts receivable (what the customer still owes) and credit Revenue (what you earned).\n\nEach line is now on the correct side of the right account, and debits still equal credits.",
+      "hintTitle": "Sale on account",
+      "hintBody": "On a credit sale, you debit Accounts receivable (what the customer owes) and credit Revenue (what you earned). If a line sits on the wrong side of the right account, or on the wrong account, move it until the story and the debit/credit pattern match."
+    }
+  }
+}
