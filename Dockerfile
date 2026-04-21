@@ -1,4 +1,4 @@
-# Multi-stage production image using Next.js standalone output (see next.config.ts).
+# Multi-stage production image using Next.js standalone output (NEXT_STANDALONE=1 in next.config.ts).
 # Based on: https://nextjs.org/docs/app/building-your-application/deploying#docker-image
 
 FROM node:20-alpine AS base
@@ -16,7 +16,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV DOCKER_BUILD=1
+ENV NEXT_STANDALONE=1
 
 RUN npm run build
 

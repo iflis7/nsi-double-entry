@@ -1,32 +1,25 @@
 # acc_game
 
-Double-entry accounting practice (Next.js). Run it locally with Node or in Docker without installing Node on the host.
+Double-entry accounting practice (Next.js). Develop with Node locally; use Docker only if you want a local production-like container.
 
 ## Prerequisites
 
-- **Local dev:** Node.js 20+ and npm (install dependencies with `npm install`).
-- **Docker:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine + Compose v2).
+- **Local dev / deploy:** Node.js 20+ and npm (`npm install`).
+- **Optional local Docker:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine + Compose v2). Not used for Vercel.
 
-## Run with Docker (recommended for workshops)
+## Deploy (Vercel or any Node host)
 
-From this directory:
+Use the normal Next.js build. **Do not** enable “Docker” as the build strategy on Vercel—this repo’s `Dockerfile` is for **local** use only.
 
-```bash
-docker compose up --build
-```
+On [Vercel](https://vercel.com): import the repo and use the default Next.js preset (`npm run build` / `vercel build`). `vercel.json` sets `"framework": "nextjs"` so the platform uses the Next builder, not the Dockerfile.
 
-Open [http://localhost:3000](http://localhost:3000). Stop with `Ctrl+C` or:
+Elsewhere:
 
 ```bash
-docker compose down
+npm install
+npm run build
+npm start
 ```
-
-### Troubleshooting
-
-- **Port 3000 already in use:** change the host port in `docker-compose.yml` (e.g. `"3001:3000"`) and open `http://localhost:3001`.
-- **After changing `package.json`:** rebuild with `docker compose build --no-cache` or `docker compose up --build`.
-
-The image uses Next.js **standalone** output (`output: "standalone"` in `next.config.ts`) so the runtime image stays small.
 
 ## Run locally (development)
 
@@ -37,6 +30,23 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Docker (local only)
+
+For a production-style run on your machine (e.g. workshops), from this directory:
+
+```bash
+docker compose up --build
+```
+
+Open [http://localhost:3000](http://localhost:3000). Stop with `Ctrl+C` or `docker compose down`.
+
+The image build sets `NEXT_STANDALONE=1` so `next.config.ts` emits **standalone** output (small runtime image). That flag is **not** set on Vercel (`VERCEL=1`), so cloud deploys use the default Next output.
+
+### Troubleshooting (Docker)
+
+- **Port 3000 already in use:** change the host port in `docker-compose.yml` (e.g. `"3001:3000"`) and open `http://localhost:3001`.
+- **After changing `package.json`:** rebuild with `docker compose build --no-cache` or `docker compose up --build`.
+
 ## Production build (local, without Docker)
 
 ```bash
@@ -44,7 +54,3 @@ npm install
 npm run build
 npm start
 ```
-
-## Deploy
-
-This app works on [Vercel](https://vercel.com) with the default Next.js settings, or any host that can run the Docker image built from the included `Dockerfile`.
